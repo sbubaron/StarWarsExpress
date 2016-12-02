@@ -63,8 +63,6 @@ app.put('/quotes', (req, res) => {
   })
 })
 
-
-
 app.delete('/quotes', (req, res) => {
   console.log('delete')
   db.collection('quotes').findOneAndDelete({name: req.body.name},
@@ -73,7 +71,6 @@ app.delete('/quotes', (req, res) => {
     res.json('ACKBAR FREED FROM TRAP')
   })
 })
-
 
 app.get('/quotes/by-name/:name', (req, res) => {
   console.log(req.params.name)
@@ -89,7 +86,6 @@ app.get('/quotes/:id', (req, res) => {
 
   db.collection('quotes').find({_id: ObjectID(req.params.id)}).toArray((err, result) => {
     if (err) return console.log(err)
-    //console.log(result)
     res.render('quote.ejs', {id: req.params.id, quotes: result})
   })
 })

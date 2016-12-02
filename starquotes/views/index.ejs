@@ -1,36 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>MY APP</title>
-</head>
-<body>
-  May Node and Express be with you.
 
-  <ul class="quotes">
-  <% for(var i=0; i<quotes.length; i++) {%>
-    <li class="quote">
-      <span><%= quotes[i].name %></span>
-      <span><%= quotes[i].quote %></span>
-      <span><%= quotes[i]._id %></span>
-    </li>
-  <% } %>
-  </ul>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Star Quotes</title>
 
-  <form action="/quotes" method="POST">
-    <input type="text" placeholder="name" name="name">
-    <input type="text" placeholder="quote" name="quote">
-    <button type="submit">Submit</button>
-  </form>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Bootstrap -->
+    <link href="/theme/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 
-  <div>
-  <h2>ITS A TRAP</h2>
-  <button id="update"> ITS A TRAAAAP! </button>
-    <button id="delete"> FREE ACKBAR! </button>
-</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/theme/js/header/header.dev.js"></script>
+  </head>
 
-<script src="main.js"></script>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          May Node and Express be with you.
 
-</body>
+          <ul class="quotes">
+            <% for(var i=0; i<quotes.length; i++) {%>
+              <li class="quote">
+                <span><%= quotes[i].name %></span>
+                <span><%= quotes[i].quote %></span>
+                <span><%= quotes[i]._id %></span>
+              </li>
+              <% } %>
+          </ul>
+
+          <form action="/quotes" method="POST">
+            <input type="text" placeholder="name" name="name">
+            <input type="text" placeholder="quote" name="quote">
+            <button type="submit">Submit</button>
+          </form>
+
+
+          <div>
+            <h2>ITS A TRAP</h2>
+            <button id="update"> ITS A TRAAAAP! </button>
+            <button id="delete"> FREE ADMIRAL ACKBAR! </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+
+  </body>
+
 </html>
